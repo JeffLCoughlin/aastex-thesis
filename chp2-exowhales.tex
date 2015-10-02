@@ -1,0 +1,88 @@
+\label{chap2}
+\section{\MakeUppercase{Observations of Whales in Kepler Data Using Exoacoustic Imaging Techniques}}
+
+\subsection{Observing an Exowhale}
+\label{exowhaleobs}
+
+We observed a certain star with an exoplanet through a telescope. In Figure~\ref{whalefig1} we plot a theoretical star-whale system. 
+
+\begin{figure}  % No [] option should make the figure take up its own page
+\centering
+\epsfig{width=\linewidth,file=whalefig1.eps}
+\caption[Whales are Everywhere (short caption example)]{An illustration of a system containing a star, shown on the left, and a whale, shown on the right, separated by a distance $a$, not to scale. The star and whale lie at distances of $r_{\star}$ and $r_{p}$, respectively, from the barycenter of the system, which is marked via a ``+'' symbol. Similarly, the star and whale lie at distances of $s_{\star}$ and $s_{p}$, respectively, from the photocenter of the system, which is marked via a ``$\times$'' symbol. All distances are sky-projected distances along the semi-major axis of the system, and thus are independent of the system's inclination. Note that although in this illustration the photocenter is to the left of the barycenter, it can lie anywhere between the star and whale.}
+\label{whalefig1}
+\end{figure}
+
+\begin{figure}[h]  % Adding [h] will tell latex to place the figure with text if it can and looks good. If it can't place it with text (too big), then it goes to the end of the chapter and you will have to go back to [] or []h!]
+\centering
+\epsfig{width=\linewidth,file=whalefig1.eps}
+\caption[Whales are Everywhere (short caption example)]{An illustration of a system containing a star, shown on the left, and a whale, shown on the right, separated by a distance $a$, not to scale. The star and whale lie at distances of $r_{\star}$ and $r_{p}$, respectively, from the barycenter of the system, which is marked via a ``+'' symbol. Similarly, the star and whale lie at distances of $s_{\star}$ and $s_{p}$, respectively, from the photocenter of the system, which is marked via a ``$\times$'' symbol. All distances are sky-projected distances along the semi-major axis of the system, and thus are independent of the system's inclination. Note that although in this illustration the photocenter is to the left of the barycenter, it can lie anywhere between the star and whale.}
+\label{whalefig1a}
+\end{figure}
+
+\begin{figure}[h!]  % Using [h!] will force it to go right here in the text, and be mroe aggressive about fitting text on the same page.
+\centering
+\epsfig{width=\linewidth,file=whalefig1.eps}
+\caption[Whales are Everywhere (short caption example)]{An illustration of a system containing a star, shown on the left, and a whale, shown on the right, separated by a distance $a$, not to scale. The star and whale lie at distances of $r_{\star}$ and $r_{p}$, respectively, from the barycenter of the system, which is marked via a ``+'' symbol. Similarly, the star and whale lie at distances of $s_{\star}$ and $s_{p}$, respectively, from the photocenter of the system, which is marked via a ``$\times$'' symbol. All distances are sky-projected distances along the semi-major axis of the system, and thus are independent of the system's inclination. Note that although in this illustration the photocenter is to the left of the barycenter, it can lie anywhere between the star and whale.}
+\label{whalefig1b}
+\end{figure}
+
+\tabletypesize{\scriptsize}
+\begin{deluxetable}{ccccccccc}
+  \tablewidth{0pt}
+  \tablecaption{Currently Known Exoplanets with the Most Negative $\alpha_{WHALE}$ Values}
+  \tablecolumns{9}
+  \tablehead{Name & $D$ & $M_{\star}$ & $R_{\star}$ & $T_{\star}$ & $M_{p}$ & $R_{p}$ & $P$ & $\alpha_{WHALE}$ \\ & (pc) & (M$_{\sun}$) & (R$_{\sun}$) & (K) & (M$_{\rm J}$) & (R$_{\rm J}$) & (Days) & ($\mu$as)}
+  \startdata
+  \cutinhead{K Band (2.19 $\mu$m)}
+  \input{whaletab1a.tex}
+  \cutinhead{L Band (3.45 $\mu$m)}
+  \input{whaletab1b.tex}
+  \cutinhead{M Band (4.75 $\mu$m)}
+  \input{whaletab1c.tex}
+  \cutinhead{N Band (10.0 $\mu$m)}
+  \input{whaletab1d.tex}
+  \enddata
+  \label{tab1}
+\end{deluxetable}
+
+\section{Further Whale Observations}
+
+We get into detail about exowhales.
+
+\subsection{Whales and You: What you Need to Know}
+
+A subsection on whales and you.
+
+\subsubsection{Whales: The Noisy Killer}
+
+Everyone can hear you scream underwater.
+
+\paragraph{Whale Colors}
+
+A paragraph, (what you might want to label a subsubsubsection), and whale chromotography. We could go as deep in sections as a subparagraph, but, well, let's not.
+
+Instead let's show a rotated deluxetable on whales with errorbars in Table~\ref{modelresultstab}.
+
+\begin{deluxetable}{rcccccccccc}
+  \rotate  % Comment out for portrait, leave uncommented for landscape
+  \tablewidth{0pt}  % Gotta have this in every deluxetable
+  \tabletypesize{\scriptsize}
+%   \setlength{\tabcolsep}{5pt} % ONLY INCLUDE THIS LINE IF YOU NEED IT! Having it included squeezs column space slightly (smaller pt = tigheter tables) to make it fit in margins since its such a big table.
+  \tablecaption{Modeling Results: Median Values and Associated 1$\sigma$ Uncertainties}
+  \tablecolumns{11}
+  \tablehead{KOI & $J$ & $r_{\rm sum}$ & $k$ & $i$ & $e$cos$w$ & $e$sin$w$ & $P$ & $T_{0}$ & $A_{L_{p}}$ & $\chi^{2}_{red}$\\ & & & & ($\degr$) & & & (Days) & (BJD-2450000) & & }
+  \startdata
+  \cutinhead{PDC Light Curve With Eccentricity Fixed to Zero}
+  \input{kepsec-tab2a.tex}
+  \cutinhead{CLM Light Curve With Eccentricity Fixed to Zero}
+  \input{kepsec-tab2b.tex}
+  \cutinhead{PDC Light Curve With Eccentricity Allowed To Vary}
+  \input{kepsec-tab2c.tex}
+  \cutinhead{CLM Light Curve With Eccentricity Allowed To Vary}
+  \input{kepsec-tab2d.tex}
+  \enddata
+  \label{modelresultstab}
+\end{deluxetable}
+
+

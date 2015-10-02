@@ -1,0 +1,116 @@
+%% Thesis file for NMSU Astronomy Dept. Thesises...Thesi...Theses...ya know that thing you exchange for a degree.
+% Last edited May 2012 by J. Coughlin. % jlcough@nmsu.edu
+% Requires the following packages (which should be default in your latex installation): latexsym, graphicx, amssym, natbib, verbatim, caption.
+% If you use \includegraphics then you will also need graphics, and if you use epsfig you will also need epsfit, and likely epstopdf for pdflatex.
+% In testing there was some issues with mac users and the caption package, so I have included the needed caption*.sty files with this distro just in case to override the system default.
+
+\documentclass[12pt,preprint]{aastex-thesis}  % Using a custom-modified version of aastex v5.2. Need to use preprint style. (You can do preprint2 for double-column if you want for reading over - the bulk of thesis will come out okay in 2 columns but some pages won't, like the header pages and ToC).  Default is 12pt for NMSU thesis. Note this means that /normalsize is 12pt, /footnotesize is 10pt, /small is 11pt, /scriptsize is 8 pt. Having footnotes 10pt complies with NMSU thesis guidelines.
+
+\usepackage{epsfig}  % Allows you to use epsfig, of course.
+\usepackage{epstopdf}  % Converts eps files to pdf on the fly - have to have to work with pdflatex.
+%\usepackage{endfloat}  % If you uncomment this line, it moves all the figures to the end of the paper. Useful if you want to print thesis without figures in the way for proofreading or whatever
+\usepackage{graphics}  % Need if using /includegraphics, but not if using all /epsfig. Doesn't hurt to include though.
+\usepackage{natbib}  % Gotta have for bibtex of course.
+\usepackage{iondefs} % Definitions of ion symbols if you work with ions a lot...isn't it little ionic? don't ya think? just a little ionic. Like a thousand tables, when all you need is a figure...
+\usepackage{listings}  % Package to directly include source code in the document. E.x.  \lstinputlisting{MyProg.cpp}
+
+\begin{document}
+
+\doublespace
+
+\pagenumbering{roman}  % Makes it so all the intro pages are numbered i, ii, iii, iv, etc.
+
+\pagestyle{empty}  % We don't want a page number (i) printed on the first page
+
+\include{title}  % Title Page - title.tex
+
+\pagestyle{plain} % Now start showing page numbers
+
+\include{approval}  % Grad School Approval Page - approval.tex
+
+\include{dedica}  % Dedication Page - dedica.tex
+
+\include{ackno}  % Acknolwedgements Page - ackno.tex
+
+\include{vita}  % Vita page - vita.tex
+
+\doublespace
+
+\include{abstract}  % Abstract page - abstract.tex
+
+\singlespace
+
+\tableofcontents  % Command to generate the table of contents
+\newpage
+
+\listoftables  % Generate the list of tables
+\addcontentsline{toc}{section}{LIST OF TABLES}  % Makes it so the table of contents includes an entry for the list of tables and the page number its on
+\newpage
+\addcontentsline{toc}{section}{LIST OF FIGURES}  % Ditto as above but for the list of figures.
+\listoffigures  % Generate the list of figures
+
+
+\include{cd}  % Page if you have a CD included with your thesis. If you do not have a CD, comment out this line
+
+\include{abbrev}  % Page that contains a list of abbreviations. This is optional, so if you don't have many or don't want it, just comment out this line
+
+\doublespace
+
+\clearpage
+\resetcounters  % Custom command in aastex-thesis to re-set counters so figures, tables, and equations are labeled 1.1, 1.2, 1.3, 2.1, 2.2, etc., instead of 1.1, 1.2, 1.3, 2.4, 2.5
+
+\pagenumbering{arabic}  % Make page numbers 1,2,3... starting with the Introduction
+
+
+\input{chp1-intro}  % Intoduction
+
+\clearpage
+\resetcounters
+
+\input{chp2-exowhales}  % Chapter 2
+
+%% Repeat as many chapters as you need with
+% \clearpage
+% \resetcounters
+% \input{chapterX}
+
+\clearpage
+
+% Below is for an appendix or appendices if you have them. If not just comment it all out
+
+\pagestyle{empty}  % No page number on the half-title appendix page...okie dokie can do nmsu. (Note the page number count still increases, we're just printing the page number on the page.)
+
+\begin{center}
+APPENDICES  % NMSU requires a half-title page that is labeled APPENDIX or APPENDICES (depending if you have 1 or 2+ appendix/appendices.) Yes, literally a whole page with nothing but this word, cause ya know, that makes sense...
+\end{center}
+
+\addtocontents{toc}{\protect\contentsline{}{}{}}  % Add an extra line before 'Appendices' in the table of contents
+\appendix  % Start the appendix
+
+\clearpage
+\resetcounters
+
+\pagestyle{plain}  % Resume printing page numbers
+
+\input{appendixA}  % Appendix A - appendixA.tex
+
+\clearpage
+\resetcounters
+
+\input{appendixB}  % Appendix B - appendixB.tex
+
+
+%% Repeat as many appendices as you need with
+% \clearpage
+% \resetcounters
+% \input{appendixX}
+
+\clearpage
+
+\singlespace
+\addcontentsline{toc}{section}{REFERENCES}  % This line makes sure that REFERENCES shows up in the table of contents with the correct page number
+\bibliographystyle{apj}  % You can use any bibliography style you like, but hey, I like ApJ cause I'm used to it
+\bibliography{AstroRefs.bib}  % Your bibtex file with all that lovely natbib info
+
+\end{document}
+
